@@ -96,7 +96,7 @@ class PreStage:
                                    'userId'], prefix='User')
 
         # A function to reduce sparsity
-        def drop_high_zero_columns(df, threshold=99.7):
+        def drop_high_zero_columns(df, threshold=99.95):
             # Calculate the percentage of zeros in each column
             zero_percentage = (df == 0).mean() * 100
 
@@ -110,7 +110,7 @@ class PreStage:
             return df
 
         # Call the function to drop high-zero columns
-        df1 = drop_high_zero_columns(movie_dbs, threshold=99.7)
+        df1 = drop_high_zero_columns(movie_dbs, threshold=99.95)
 
         self.preprocessed1 = df1  # Store the preprocessed data in an instance variable
 
