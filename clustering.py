@@ -2,7 +2,11 @@ from sklearn.cluster import KMeans
 from pre_process import PreStage
 
 
-def recommender(movie_title,  n=10, k=8):
+from sklearn.cluster import KMeans
+from pre_process import PreStage
+
+
+def recommender(movie_title, n=10, k=8):
     # Create an instance of the PreStage class
     preprocessor = PreStage()
 
@@ -15,7 +19,7 @@ def recommender(movie_title,  n=10, k=8):
 
     # Choose the number of clusters (K)
     K = k
-    # Carry our k means
+    # Carry out k means
     kmeans = KMeans(n_clusters=K, n_init=10)
     labels = kmeans.fit_predict(df)
 
@@ -42,7 +46,7 @@ def recommender(movie_title,  n=10, k=8):
             matching_titles.append(title)
 
     if not matching_titles:
-        return "No matching movie title found in the dataset."
+        return print("No matching movie title found in the database.")
 
     # Select the closest matching title based on partial string match
     title = matching_titles[0]
@@ -62,13 +66,12 @@ def recommender(movie_title,  n=10, k=8):
         by='rating', ascending=False).head(n)
 
     # Get the titles of the top movies
-    top_movie_titles = top_movies['title']
-    # top_movie_titles = dict(top_movies['title'])
+    top_movie_titles = top_movies['title'].to_string(index=False)
 
-    result = print(f"Movie title closest match is: {title}.\n \n", f"Top {
-        n} recommendations are: \n \n", top_movie_titles)
+    result = f"Movie title closest match is: {title}.\n\nTop {
+        n} recommendations are: \n\n{top_movie_titles}"
 
-    return result
+    return print(result)
 
 
-recommender("black panther")
+recommender("ultron")

@@ -1,4 +1,5 @@
 import pandas as pd
+import os
 
 
 class PreStage:
@@ -53,6 +54,7 @@ class PreStage:
 
     def __init__(self):
         # Define the file paths for movies and ratings data
+
         movies_data = 'ml-latest-small/movies.csv'
         ratings_data = 'ml-latest-small/ratings.csv'
 
