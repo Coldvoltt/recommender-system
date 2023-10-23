@@ -18,4 +18,12 @@ This and other GroupLens data sets are publicly available for download at <http:
 
 1. [VS Code IDE](https://code.visualstudio.com/)
 2. [Python 3.12.0](https://www.python.org/downloads/)
-3.
+
+3. Libraries: `requests`, `zipfile`, `pandas`, `matplotlib`, `sklearn`
+
+## Procedure
+
+- Data Ingestion: Using the `requests` and `zipfile` library, we are able to download a zip format of the dataset, extract, and save into desired directory. `import_data.py` file contains the code to achieving that.
+- Data Preprocessing: We used `pandas` library for data preprocessing. The whole pipeline provides methods to prepare, clean, and transform data for further analysis. That is contained in `pre_process.py` file.
+- Parameter Tuning: Our choice of algorithm is K-Means Clustering. We need to choose an optimal K (Number of clusters) for the algorithm. We use WCSS score and Silhouette Statistics as our metric. We provided a visual for evaluation using `matplotlib`. This process is contained in `k_evaluation.py` file.
+- Clustering: Using the `KMeans` function in the `Sklearn.Cluster` module we are able to create clusters of recommendations by similar movie traits and user interraction. The file `clustering.py` contains the algorithm.
