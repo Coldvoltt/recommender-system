@@ -30,4 +30,4 @@ This and other GroupLens data sets are publicly available for download at <http:
 
 - **Clustering:** Using the `KMeans` function in the `Sklearn.Cluster` module we are able to create clusters of recommendations by similar movie traits and user interraction. The file `clustering.py` contains the algorithm.
 
-- **Model Deployment:** We created a post method using flask and call on the function `recommender` which gives us movie recommendations based on the k-means clustering algorithm. We use `postman` vs code extension to test the endpoint.
+- **Model Deployment:** We created a post method using flask and call on the function `recommender` which gives us movie recommendations based on the k-means clustering algorithm. We use `postman` vs code extension to test the endpoint..
